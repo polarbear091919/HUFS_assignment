@@ -1,0 +1,522 @@
+[
+  {
+    "stock_code": "000270",
+    "date": "2025-06-05",
+    "current_price": 93100,
+    "market_regime": "trend",
+    "indicators": {
+      "williams_r": {
+        "value": -8.0,
+        "score": 2
+      },
+      "mfi": {
+        "value": 52.21,
+        "score": 8
+      },
+      "ppo": {
+        "values": {
+          "ppo": -0.6906,
+          "ppo_signal": -0.8711,
+          "ppo_histogram": 0.1805
+        },
+        "score": 10
+      },
+      "hull_ma": {
+        "value": 90759.92,
+        "score": 12
+      },
+      "bollinger": {
+        "values": {
+          "current_price": 93100,
+          "bb_lower": 85650.77,
+          "bb_middle": 89530.0,
+          "bb_upper": 93409.23
+        },
+        "score": 2
+      }
+    },
+    "scores": {
+      "williams_r_score": 2,
+      "mfi_score": 8,
+      "ppo_score": 10,
+      "hull_ma_score": 12,
+      "bollinger_score": 2,
+      "technical_score": 37.0
+    },
+    "weights_used": {
+      "williams_r": 0.2,
+      "mfi": 0.15,
+      "ppo": 0.25,
+      "hull_ma": 0.25,
+      "bollinger": 0.15
+    }
+  },
+  {
+    "stock_code": "000660",
+    "date": "2025-06-05",
+    "current_price": 224500,
+    "market_regime": "trend",
+    "indicators": {
+      "williams_r": {
+        "value": -16.42,
+        "score": 2
+      },
+      "mfi": {
+        "value": 78.0,
+        "score": 8
+      },
+      "ppo": {
+        "values": {
+          "ppo": 2.3263,
+          "ppo_signal": 1.9548,
+          "ppo_histogram": 0.3715
+        },
+        "score": 12
+      },
+      "hull_ma": {
+        "value": 221361.11,
+        "score": 12
+      },
+      "bollinger": {
+        "values": {
+          "current_price": 224500,
+          "bb_lower": 191738.25,
+          "bb_middle": 207640.0,
+          "bb_upper": 223541.75
+        },
+        "score": 2
+      }
+    },
+    "scores": {
+      "williams_r_score": 2,
+      "mfi_score": 8,
+      "ppo_score": 12,
+      "hull_ma_score": 12,
+      "bollinger_score": 2,
+      "technical_score": 39.5
+    },
+    "weights_used": {
+      "williams_r": 0.2,
+      "mfi": 0.15,
+      "ppo": 0.25,
+      "hull_ma": 0.25,
+      "bollinger": 0.15
+    }
+  },
+  {
+    "stock_code": "005380",
+    "date": "2025-06-05",
+    "current_price": 189600,
+    "market_regime": "trend",
+    "indicators": {
+      "williams_r": {
+        "value": -24.82,
+        "score": 8
+      },
+      "mfi": {
+        "value": 50.98,
+        "score": 8
+      },
+      "ppo": {
+        "values": {
+          "ppo": -1.2512,
+          "ppo_signal": -1.6998,
+          "ppo_histogram": 0.4485
+        },
+        "score": 10
+      },
+      "hull_ma": {
+        "value": 186979.76,
+        "score": 12
+      },
+      "bollinger": {
+        "values": {
+          "current_price": 189600,
+          "bb_lower": 178108.41,
+          "bb_middle": 184790.0,
+          "bb_upper": 191471.59
+        },
+        "score": 4
+      }
+    },
+    "scores": {
+      "williams_r_score": 8,
+      "mfi_score": 8,
+      "ppo_score": 10,
+      "hull_ma_score": 12,
+      "bollinger_score": 4,
+      "technical_score": 44.5
+    },
+    "weights_used": {
+      "williams_r": 0.2,
+      "mfi": 0.15,
+      "ppo": 0.25,
+      "hull_ma": 0.25,
+      "bollinger": 0.15
+    }
+  },
+  {
+    "stock_code": "005930",
+    "date": "2025-06-05",
+    "current_price": 59100,
+    "market_regime": "trend",
+    "indicators": {
+      "williams_r": {
+        "value": -12.9,
+        "score": 2
+      },
+      "mfi": {
+        "value": 69.81,
+        "score": 8
+      },
+      "ppo": {
+        "values": {
+          "ppo": 0.2212,
+          "ppo_signal": -0.4552,
+          "ppo_histogram": 0.6764
+        },
+        "score": 12
+      },
+      "hull_ma": {
+        "value": 58849.21,
+        "score": 12
+      },
+      "bollinger": {
+        "values": {
+          "current_price": 59100,
+          "bb_lower": 52806.7,
+          "bb_middle": 55940.0,
+          "bb_upper": 59073.3
+        },
+        "score": 2
+      }
+    },
+    "scores": {
+      "williams_r_score": 2,
+      "mfi_score": 8,
+      "ppo_score": 12,
+      "hull_ma_score": 12,
+      "bollinger_score": 2,
+      "technical_score": 39.5
+    },
+    "weights_used": {
+      "williams_r": 0.2,
+      "mfi": 0.15,
+      "ppo": 0.25,
+      "hull_ma": 0.25,
+      "bollinger": 0.15
+    }
+  },
+  {
+    "stock_code": "005935",
+    "date": "2025-06-05",
+    "current_price": 48500,
+    "market_regime": "trend",
+    "indicators": {
+      "williams_r": {
+        "value": -9.47,
+        "score": 2
+      },
+      "mfi": {
+        "value": 73.27,
+        "score": 8
+      },
+      "ppo": {
+        "values": {
+          "ppo": -0.062,
+          "ppo_signal": -0.6646,
+          "ppo_histogram": 0.6026
+        },
+        "score": 10
+      },
+      "hull_ma": {
+        "value": 48244.64,
+        "score": 12
+      },
+      "bollinger": {
+        "values": {
+          "current_price": 48500,
+          "bb_lower": 43645.34,
+          "bb_middle": 46010.0,
+          "bb_upper": 48374.66
+        },
+        "score": 2
+      }
+    },
+    "scores": {
+      "williams_r_score": 2,
+      "mfi_score": 8,
+      "ppo_score": 10,
+      "hull_ma_score": 12,
+      "bollinger_score": 2,
+      "technical_score": 37.0
+    },
+    "weights_used": {
+      "williams_r": 0.2,
+      "mfi": 0.15,
+      "ppo": 0.25,
+      "hull_ma": 0.25,
+      "bollinger": 0.15
+    }
+  },
+  {
+    "stock_code": "012450",
+    "date": "2025-06-05",
+    "current_price": 905000,
+    "market_regime": "trend",
+    "indicators": {
+      "williams_r": {
+        "value": -15.75,
+        "score": 2
+      },
+      "mfi": {
+        "value": 61.17,
+        "score": 8
+      },
+      "ppo": {
+        "values": {
+          "ppo": 2.0479,
+          "ppo_signal": 1.312,
+          "ppo_histogram": 0.7359
+        },
+        "score": 12
+      },
+      "hull_ma": {
+        "value": 871742.06,
+        "score": 12
+      },
+      "bollinger": {
+        "values": {
+          "current_price": 905000,
+          "bb_lower": 792344.15,
+          "bb_middle": 846800.0,
+          "bb_upper": 901255.85
+        },
+        "score": 2
+      }
+    },
+    "scores": {
+      "williams_r_score": 2,
+      "mfi_score": 8,
+      "ppo_score": 12,
+      "hull_ma_score": 12,
+      "bollinger_score": 2,
+      "technical_score": 39.5
+    },
+    "weights_used": {
+      "williams_r": 0.2,
+      "mfi": 0.15,
+      "ppo": 0.25,
+      "hull_ma": 0.25,
+      "bollinger": 0.15
+    }
+  },
+  {
+    "stock_code": "105560",
+    "date": "2025-06-05",
+    "current_price": 106300,
+    "market_regime": "trend",
+    "indicators": {
+      "williams_r": {
+        "value": -14.29,
+        "score": 2
+      },
+      "mfi": {
+        "value": 79.12,
+        "score": 8
+      },
+      "ppo": {
+        "values": {
+          "ppo": 4.225,
+          "ppo_signal": 3.7974,
+          "ppo_histogram": 0.4276
+        },
+        "score": 12
+      },
+      "hull_ma": {
+        "value": 106800.79,
+        "score": 6
+      },
+      "bollinger": {
+        "values": {
+          "current_price": 106300,
+          "bb_lower": 95828.43,
+          "bb_middle": 102180.0,
+          "bb_upper": 108531.57
+        },
+        "score": 4
+      }
+    },
+    "scores": {
+      "williams_r_score": 2,
+      "mfi_score": 8,
+      "ppo_score": 12,
+      "hull_ma_score": 6,
+      "bollinger_score": 4,
+      "technical_score": 33.5
+    },
+    "weights_used": {
+      "williams_r": 0.2,
+      "mfi": 0.15,
+      "ppo": 0.25,
+      "hull_ma": 0.25,
+      "bollinger": 0.15
+    }
+  },
+  {
+    "stock_code": "207940",
+    "date": "2025-06-05",
+    "current_price": 1019000,
+    "market_regime": "trend",
+    "indicators": {
+      "williams_r": {
+        "value": -96.61,
+        "score": 12
+      },
+      "mfi": {
+        "value": 45.88,
+        "score": 10
+      },
+      "ppo": {
+        "values": {
+          "ppo": 0.0736,
+          "ppo_signal": 0.4525,
+          "ppo_histogram": -0.3789
+        },
+        "score": 4
+      },
+      "hull_ma": {
+        "value": 1027551.59,
+        "score": 2
+      },
+      "bollinger": {
+        "values": {
+          "current_price": 1019000,
+          "bb_lower": 999321.06,
+          "bb_middle": 1033500.0,
+          "bb_upper": 1067678.94
+        },
+        "score": 6
+      }
+    },
+    "scores": {
+      "williams_r_score": 12,
+      "mfi_score": 10,
+      "ppo_score": 4,
+      "hull_ma_score": 2,
+      "bollinger_score": 6,
+      "technical_score": 31.5
+    },
+    "weights_used": {
+      "williams_r": 0.2,
+      "mfi": 0.15,
+      "ppo": 0.25,
+      "hull_ma": 0.25,
+      "bollinger": 0.15
+    }
+  },
+  {
+    "stock_code": "329180",
+    "date": "2025-06-05",
+    "current_price": 425000,
+    "market_regime": "trend",
+    "indicators": {
+      "williams_r": {
+        "value": -44.06,
+        "score": 8
+      },
+      "mfi": {
+        "value": 71.24,
+        "score": 8
+      },
+      "ppo": {
+        "values": {
+          "ppo": 0.9208,
+          "ppo_signal": -0.1374,
+          "ppo_histogram": 1.0582
+        },
+        "score": 12
+      },
+      "hull_ma": {
+        "value": 433648.81,
+        "score": 6
+      },
+      "bollinger": {
+        "values": {
+          "current_price": 425000,
+          "bb_lower": 383045.92,
+          "bb_middle": 409700.0,
+          "bb_upper": 436354.08
+        },
+        "score": 4
+      }
+    },
+    "scores": {
+      "williams_r_score": 8,
+      "mfi_score": 8,
+      "ppo_score": 12,
+      "hull_ma_score": 6,
+      "bollinger_score": 4,
+      "technical_score": 39.5
+    },
+    "weights_used": {
+      "williams_r": 0.2,
+      "mfi": 0.15,
+      "ppo": 0.25,
+      "hull_ma": 0.25,
+      "bollinger": 0.15
+    }
+  },
+  {
+    "stock_code": "373220",
+    "date": "2025-06-05",
+    "current_price": 291000,
+    "market_regime": "trend",
+    "indicators": {
+      "williams_r": {
+        "value": -13.79,
+        "score": 2
+      },
+      "mfi": {
+        "value": 53.2,
+        "score": 8
+      },
+      "ppo": {
+        "values": {
+          "ppo": -1.0592,
+          "ppo_signal": -3.5262,
+          "ppo_histogram": 2.467
+        },
+        "score": 10
+      },
+      "hull_ma": {
+        "value": 289748.02,
+        "score": 12
+      },
+      "bollinger": {
+        "values": {
+          "current_price": 291000,
+          "bb_lower": 266650.73,
+          "bb_middle": 282000.0,
+          "bb_upper": 297349.27
+        },
+        "score": 4
+      }
+    },
+    "scores": {
+      "williams_r_score": 2,
+      "mfi_score": 8,
+      "ppo_score": 10,
+      "hull_ma_score": 12,
+      "bollinger_score": 4,
+      "technical_score": 38.5
+    },
+    "weights_used": {
+      "williams_r": 0.2,
+      "mfi": 0.15,
+      "ppo": 0.25,
+      "hull_ma": 0.25,
+      "bollinger": 0.15
+    }
+  }
+]

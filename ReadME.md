@@ -1,0 +1,102 @@
+# 📈 퀀트 스코어링 및 분석 시스템 (Quant Scoring & Analysis System)
+
+## 1. 프로젝트 개요
+
+본 프로젝트는 과거 12년치 KOSPI 전체 종목의 기술적 지표를 학습한 머신러닝 모델을 통해, 각 종목의 **단기 상승 확률(스코어)**을 예측하고 순위를 제공하는 시스템입니다. 또한, 사용자가 관심 있는 종목의 최신 테마 정보를 실시간으로 조회할 수 있는 보조 기능을 포함하고 있습니다.
+
+이 시스템은 투자를 위한 완벽한 정답지가 아닌, 수많은 종목 중에서 가능성 있는 투자 후보군을 효율적으로 필터링하고 분석 시간을 절약해주는 **'똑똑한 조수'** 역할을 목표로 합니다.
+
+## 2. 주요 기능
+
+* **데이터 수집:** KOSPI 전 종목의 12년치 주가 데이터를 수집합니다.
+* **머신러닝 기반 스코어링:** 8개의 기술적 지표를 Feature로 사용하여, 각 종목이 '15일 내 5% 상승'할 확률을 예측하고 0~100점의 스코어로 변환합니다.
+* **스코어 랭킹 제공:** 매일 전 종목의 스코어를 계산하여 가장 확률이 높은 순으로 랭킹을 제공합니다.
+* **실시간 테마 조회:** 사용자가 특정 종목의 코드나 이름을 입력하면, 해당 종목과 관련된 최신 테마 및 등락률 정보를 실시간으로 크롤링하여 보여줍니다.
+* **GPU 가속:** NVIDIA GPU 및 CUDA 환경에서 XGBoost 모델 훈련을 가속하여 빠른 모델 업데이트를 지원합니다.
+
+## 3. 프로젝트 아키텍처
+
+본 프로젝트는 크게 3개의 파이프라인으로 구성되어 있습니다.
+
+* **Phase 1: 데이터 수집 및 가공 (`data_collection.py`, `data_preparation.py`)**
+    1.  KOSPI 전 종목의 12년치 시계열 데이터를 수집하여 로컬에 저장합니다.
+    2.  8개의 기술적 지표(Feature)와 Triple Barrier Method 기반의 정답(Label)을 계산하여, 모델 학습을 위한 단일 데이터셋(`ml_training_data_raw.parquet`)을 생성합니다.
+
+* **Phase 2: 모델 훈련 (`train_model.py`)**
+    1.  생성된 데이터셋을 훈련/검증/테스트용으로 분할하고, `StandardScaler`로 정규화합니다.
+    2.  XGBoost 모델을 훈련시키고, 과적합을 방지하기 위해 조기 종료(Early Stopping) 기법을 사용합니다.
+    3.  최종적으로 훈련된 모델(`xgb_model.json`)과 스케일러(`scaler.joblib`)를 파일로 저장합니다.
+
+* **Phase 3: 예측 및 분석 (`run_prediction.py`)**
+    1.  저장된 모델과 스케일러를 불러옵니다.
+    2.  최신 데이터를 기반으로 전 종목의 '상승 확률 스코어'를 예측하고 랭킹을 제공합니다.
+    3.  사용자 요청 시 특정 종목의 테마 정보를 실시간으로 조회합니다.
+
+## 4. 설치 및 환경 설정
+
+본 프로젝트는 `conda` 가상환경에서 실행하는 것을 권장합니다.
+
+1.  **Anaconda Prompt**를 실행하고, 아래 명령어로 새로운 가상환경을 생성합니다.
+    ```bash
+    conda create -n quant_v2 python=3.10
+    ```
+
+2.  생성된 가상환경을 활성화합니다.
+    ```bash
+    conda activate quant_v2
+    ```
+
+3.  프로젝트에 필요한 모든 라이브러리를 한 번에 설치합니다.
+    ```bash
+    pip install pandas numpy pandas_ta "xgboost>=1.7.6" scikit-learn matplotlib seaborn pyarrow joblib requests beautifulsoup4 tqdm
+    ```
+4.  (선택) NVIDIA GPU 사용 시, [NVIDIA CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit-archive) (버전 11.8 권장)을 설치합니다.
+
+## 5. 사용 방법
+
+아래 순서대로 스크립트를 실행합니다.
+
+1.  **데이터 수집 (최초 1회)**
+    `data_collection.py`를 실행하여 KOSPI 전 종목의 12년치 데이터를 수집합니다. (상당한 시간 소요)
+    ```bash
+    python data_collection.py
+    ```
+
+2.  **데이터 가공 (데이터 수집 후 1회)**
+    `data_preparation.py`를 실행하여 수집된 데이터를 머신러닝 학습용 데이터셋으로 가공합니다. (CPU 성능에 따라 시간 소요)
+    ```bash
+    python data_preparation.py
+    ```
+
+3.  **모델 훈련 (데이터 가공 후 1회)**
+    `train_model.py`를 실행하여 모델을 훈련하고, `xgb_model.json`과 `scaler.joblib` 파일을 생성합니다.
+    ```bash
+    python train_model.py
+    ```
+
+4.  **일일 스코어링 및 분석 (매일 실행)**
+    `run_prediction.py`를 실행하여 오늘의 주식 스코어 랭킹을 확인하고, 관심 종목의 테마를 조회합니다.
+    ```bash
+    python run_prediction.py
+    ```
+
+## 6. 모델 상세 정보
+
+* **예측 목표:** "15 거래일 내에 `-5%` 하락보다 `+5%` 상승에 먼저 도달할 확률"
+* **사용 알고리즘:** XGBoost Classifier
+* **주요 Feature (8개):**
+    * RSI (모멘텀)
+    * Stochastic %D (모멘텀)
+    * MACD Histogram (추세 모멘텀)
+    * ADX (추세 강도)
+    * Price / SMA(200) Ratio (장기 추세)
+    * Bollinger Band %B (변동성)
+    * MFI (거래량 기반 모멘텀)
+    * OBV (누적 거래량)
+
+## 7. 향후 개선 과제
+
+* **하이퍼파라미터 튜닝:** `GridSearchCV` 등을 이용한 모델 세부 파라미터 최적화
+* **피처 엔지니어링:** 래그(Lag) 피처, 상호작용 피처 등 더 다양한 기술적 지표 추가
+* **성과 백테스팅:** 예측된 스코어를 기반으로 실제 투자 시뮬레이션을 수행하여 수익률, MDD 등 검증
+* **포트폴리오 최적화:** 스코어 상위 종목 중 상관관계가 낮은 종목들을 조합하여 안정적인 포트폴리오 추천 기능 추가
