@@ -1,11 +1,9 @@
 pandas
 numpy
-xgboost>=2.0,<2.1
+xgboost==1.76
 scikit-learn
 matplotlib
 seaborn
-FinanceDataReader
-pandas-ta
 tqdm
 joblib
 requests
