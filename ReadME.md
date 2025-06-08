@@ -32,27 +32,7 @@
     2.  최신 데이터를 기반으로 전 종목의 '상승 확률 스코어'를 예측하고 랭킹을 제공합니다.
     3.  사용자 요청 시 특정 종목의 테마 정보를 실시간으로 조회합니다.
 
-## 4. 설치 및 환경 설정
-
-본 프로젝트는 `conda` 가상환경에서 실행하는 것을 권장합니다.
-
-1.  **Anaconda Prompt**를 실행하고, 아래 명령어로 새로운 가상환경을 생성합니다.
-    ```bash
-    conda create -n quant_v2 python=3.10
-    ```
-
-2.  생성된 가상환경을 활성화합니다.
-    ```bash
-    conda activate quant_v2
-    ```
-
-3.  프로젝트에 필요한 모든 라이브러리를 한 번에 설치합니다.
-    ```bash
-    pip install pandas numpy pandas_ta "xgboost>=1.7.6" scikit-learn matplotlib seaborn pyarrow joblib requests beautifulsoup4 tqdm
-    ```
-4.  (선택) NVIDIA GPU 사용 시, [NVIDIA CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit-archive) (버전 11.8 권장)을 설치합니다.
-
-## 5. 사용 방법
+## 4. 사용 방법
 
 아래 순서대로 스크립트를 실행합니다.
 
@@ -80,7 +60,7 @@
     python run_prediction.py
     ```
 
-## 6. 모델 상세 정보
+## 5. 모델 상세 정보
 
 * **예측 목표:** "15 거래일 내에 `-5%` 하락보다 `+5%` 상승에 먼저 도달할 확률"
 * **사용 알고리즘:** XGBoost Classifier
@@ -94,7 +74,7 @@
     * MFI (거래량 기반 모멘텀)
     * OBV (누적 거래량)
 
-## 7. 향후 개선 과제
+## 6. 향후 개선 과제
 
 * **하이퍼파라미터 튜닝:** `GridSearchCV` 등을 이용한 모델 세부 파라미터 최적화
 * **피처 엔지니어링:** 래그(Lag) 피처, 상호작용 피처 등 더 다양한 기술적 지표 추가
